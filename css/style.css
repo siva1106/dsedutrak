@@ -95,12 +95,26 @@ header {
     height: 80px;
 }
 
-/* CSS Logo */
+/* CSS Logo with Image */
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between image and text */
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px; /* Medium size - adjusts automatically if header changes */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-dark);
 }
+
 .logo-ds {
     color: var(--primary-color);
     font-size: 1.8rem;

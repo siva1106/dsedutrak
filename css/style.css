@@ -95,25 +95,23 @@ header {
     align-items: center;
     height: 90px;
 }
-
 /* Container for Image and Text */
 .logo {
     display: flex;
-    align-items: center;
-    gap: 12px; 
+    align-items: center; /* This keeps them perfectly centered to each other */
+    gap: 15px; 
     text-decoration: none;
 }
 
-/* The Square DS Image */
+/* The Square DS Image - Increased to 80px to match text block height */
 .logo-img {
-    /* Set this height to perfectly match the text. 
-       If the image looks slightly too small, change 60px to 65px */
-    height: 60px; 
+    height: 80px; 
     width: auto;
     object-fit: contain;
+    display: block;
 }
 
-/* Stacks the Text and Tagline vertically and aligns them to the left */
+/* Stacks the Text and Tagline vertically */
 .logo-content {
     display: flex;
     flex-direction: column;
@@ -123,23 +121,22 @@ header {
 
 /* The word "Edutrak" */
 .logo-name {
-    font-size: 2.3rem; /* Slightly larger to sit flush with the top of the D */
+    font-size: 2.5rem; 
     font-weight: 800;  
     color: var(--text-dark);
-    line-height: 0.9;  /* Pulls the text tighter to eliminate hidden padding */
+    line-height: 0.85; /* Pulls text extremely tight to eliminate top invisible padding */
 }
 
 /* The Tagline below */
 .logo-tagline {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-top: 4px; 
+    margin-top: 8px; /* Correct spacing between the big text and tagline */
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1;
-}
-.logo-text {
+}.logo-text {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-dark);

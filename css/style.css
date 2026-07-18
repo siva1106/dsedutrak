@@ -394,9 +394,21 @@ footer {
     margin-top: auto;
 }
 
+/* ================= IFRAME & OVERFLOW FIX ================= */
+html, body {
+    overflow-x: hidden; /* This absolutely prevents the footer cut-off! */
+    width: 100%;
+}
+
+.contact-form-container iframe {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
 /* ================= MOBILE RESPONSIVENESS ================= */
 @media (max-width: 768px) {
-    .grid-2-col, .features-grid {
+    .grid-2-col, .features-grid, .services-grid {
         grid-template-columns: 1fr;
     }
     
@@ -404,14 +416,36 @@ footer {
         font-size: 2.2rem;
     }
     
-    /* Mobile Menu Implementation */
+    /* ---- HEADER LOGO SCALED FOR MOBILE ---- */
+    .header-container {
+        justify-content: flex-start; /* Align everything to the left side */
+        padding: 0 10px;
+    }
+
     .mobile-menu-btn {
         display: block;
+        order: -1; /* MAGIC CSS: Forces the menu button to the extreme left! */
+        margin-right: 15px; /* Adds space between menu and logo */
+    }
+
+    /* Scales down logo only on phones so tagline doesn't break into two lines */
+    .logo-img {
+        height: 50px; 
     }
     
+    .logo-name {
+        font-size: 1.5rem; 
+    }
+    
+    .logo-tagline {
+        font-size: 0.55rem;
+        margin-top: 3px;
+    }
+
+    /* ---- MOBILE DROPDOWN MENU ---- */
     #nav-menu {
         position: absolute;
-        top: 80px;
+        top: 90px; /* Matches the new header height */
         left: 0;
         width: 100%;
         background-color: var(--white);
